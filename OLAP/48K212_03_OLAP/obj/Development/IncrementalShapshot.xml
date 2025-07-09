@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>48K212_03_OLAP</Database>
+    <Server>DESKTOP-045NBOC\MSSQLSERVER_SSAS</Server>
+    <ConnectionString>Data Source=DESKTOP-045NBOC\MSSQLSERVER_SSAS;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>ST6qR1ScuO8XGb8j+rV2NHOmHic=10/03/2025 8:07:11 PM10/03/2025 8:07:11 PM</TimeStamp>
+        <ID>
+          <String>FOOD OLAP</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>rvqBAtze81jSQXkEqFgCGPtiGL8=10/03/2025 8:07:49 PM10/03/2025 8:07:48 PM</TimeStamp>
+        <ID>
+          <String>FOOD OLAP VIEW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3Qor49lnp30n6oDXZ44QBZakQDk=10/03/2025 8:09:48 PM10/03/2025 8:08:10 PM</TimeStamp>
+        <ID>
+          <String>Dim Meal</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>uhIWZJRuKP7zDmwECiA85kzBJ+k=10/03/2025 8:09:48 PM10/03/2025 8:08:11 PM</TimeStamp>
+        <ID>
+          <String>Dim Food</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HcGRs6au9CEOEcoGPINo1sZmvso=10/03/2025 8:09:48 PM10/03/2025 8:08:11 PM</TimeStamp>
+        <ID>
+          <String>Dim User</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>J+5U+xsfsdlS+iuwa6FnC83MHqc=10/03/2025 8:09:48 PM10/03/2025 8:08:11 PM</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>EFfJp01hKD7ogY/fKLkaZSEsF8s=10/03/2025 8:09:48 PM10/03/2025 8:08:10 PMLOk3LWIzl0rPFurHH7yt8LMOLSo=10/03/2025 8:08:11 PM10/03/2025 8:08:10 PM</TimeStamp>
+        <ID>
+          <String>FOOD OLAP VIEW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>WIVuE9uTcn2QFfLAB2Dc9Htu8wg=10/03/2025 8:06:02 PM10/03/2025 8:06:01 PM</TimeStamp>
+      <ID>
+        <String>48K212_03_OLAP</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-03-10T13:09:54.016667Z</LastDeployed>
+</DeploymentSnapshot>

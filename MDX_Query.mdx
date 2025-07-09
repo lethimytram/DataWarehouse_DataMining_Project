@@ -1,0 +1,85 @@
+﻿-- Tính calories trung bình của mỗi người mỗi ngày
+WITH 
+MEMBER [Measures].[Total Calories] AS 
+    SUM([Measures].[Calories])
+
+MEMBER [Measures].[Total Days] AS 
+    DISTINCTCOUNT([Dim Time].[Date].[Date].Members)
+
+MEMBER [Measures].[Total Users] AS 
+    DISTINCTCOUNT([Dim User].[User ID].[User ID].Members)
+
+MEMBER [Measures].[Avg Calories Per Day Per Person] AS 
+    IIF(
+        [Measures].[Total Days] * [Measures].[Total Users] > 0, 
+        [Measures].[Total Calories] / ([Measures].[Total Days] * [Measures].[Total Users]), 
+        NULL
+    )
+SELECT 
+    {[Measures].[Avg Calories Per Day Per Person]} ON COLUMNS
+FROM [FOOD OLAP VIEW];
+
+-------------------------------------------------------------------------------
+--Tính trung bình Cholesterol theo từng loại bữa ăn
+WITH MEMBER [Measures].[Avg_Cholesterol] AS 
+    [Measures].[Cholesterol] / [Measures].[Fact Nutrition Count]
+SELECT 
+    [Measures].[Avg_Cholesterol] ON COLUMNS, 
+    NON EMPTY [Dim Meal].[Meal Type].MEMBERS ON ROWS 
+FROM [FOOD OLAP VIEW];
+
+--------------------------------------------------------------------------
+--Top 5 thực phẩm có lượng đường tiêu thụ trung bình cao nhất
+WITH MEMBER [Measures].[Avg_Sugars] AS
+    [Measures].[Sugars] / [Measures].[Fact Nutrition Count]
+SELECT 
+    [Measures].[Avg_Sugars] ON COLUMNS, 
+    TOPCOUNT(
+        [Dim Food].[Food Item].Children, 
+        5, 
+        [Measures].[Avg_Sugars]
+    ) ON ROWS
+FROM [FOOD OLAP VIEW];
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+--Lượng calories của các thực phẩm thuộc nhóm "Snacks" 
+SELECT  
+    [Measures].[Calories] ON COLUMNS,  
+    NONEMPTY([Dim Food].[Food Item].[Food Item]) ON ROWS  
+FROM [FOOD OLAP VIEW] 
+WHERE ([Dim Food].[Category].[Snacks]);
+
+----------------------------------------------------------------------------
+--Trung bình lượng Protein tiêu thụ theo "Category"
+WITH 
+MEMBER [Measures].[Avg_Protein] AS  
+    SUM([Dim Food].[Food Item].[Food Item], [Measures].[Protein])  
+    / COUNT([Dim Food].[Food Item].[Food Item])  
+SELECT  
+    NON EMPTY [Dim Food].[Category].[Category] ON ROWS,  
+    {  
+        [Measures].[Avg_Protein]  
+    } ON COLUMNS  
+FROM [FOOD OLAP VIEW];
+
+----------------------------------------------------------------------------
+/*Danh sách các thực phẩm có lượng đường trung bình mỗi ngày > 25 
+trong tháng 12 năm 2024*/
+WITH 
+MEMBER [Measures].[Avg_Sugar_Per_Day] AS  
+    AVG(EXISTING [Dim Time].[Day].[Day], [Measures].[Sugars])  
+
+SELECT  
+    [Measures].[Avg_Sugar_Per_Day] ON COLUMNS,  
+    NONEMPTY(
+        FILTER(  
+            [Dim Food].[Food Item].[Food Item],  
+            [Measures].[Avg_Sugar_Per_Day] > 25  
+        )  
+    ) ON ROWS  
+FROM [FOOD OLAP VIEW] 
+WHERE ([Dim Time].[Year].[2024], [Dim Time].[Month].[12])  
+
+ 
+
+

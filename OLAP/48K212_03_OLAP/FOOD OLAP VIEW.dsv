@@ -1,0 +1,182 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="325591f2-3d81-4bd9-8093-b1f2ef4ea409" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>FOOD OLAP VIEW</ID>
+  <Name>FOOD OLAP VIEW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>FOOD OLAP</DataSourceID>
+  <Schema>
+    <xs:schema id="FOOD_x0020_OLAP_x0020_VIEW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="FOOD_x0020_OLAP_x0020_VIEW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="8eadec1c-49c4-4d40-84b2-5a9971c3a73d">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Dim_Food" msprop:DbTableName="Dim_Food" msprop:FriendlyName="Dim_Food" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="da9ae1b0-e2c6-4adc-9317-033409bd2c87">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Food_Item" msprop:FriendlyName="Food_Item" msprop:DbColumnName="Food_Item" msprop:design-time-name="033883b1-3482-462d-a228-7951e6e39a3a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Category" msprop:FriendlyName="Category" msprop:DbColumnName="Category" msprop:design-time-name="f14243d9-ade0-49c7-8e8d-7cfae5d9d0b9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FoodID" msprop:FriendlyName="FoodID" msprop:DbColumnName="FoodID" msprop:design-time-name="04e94837-1a80-4570-8927-ae808f342a19" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Meal" msprop:DbTableName="Dim_Meal" msprop:FriendlyName="Dim_Meal" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="a7bdd88d-e414-4bfc-9e9b-2e62ff7af8c3">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Meal_Type" msprop:FriendlyName="Meal_Type" msprop:DbColumnName="Meal_Type" msprop:design-time-name="61fb9be6-56ff-41fd-8170-88685eaee321" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MealID" msprop:FriendlyName="MealID" msprop:DbColumnName="MealID" msprop:design-time-name="73265a27-24e4-4bf1-8cf8-b78b57655c18" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Time" msprop:DbTableName="Dim_Time" msprop:FriendlyName="Dim_Time" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="378901d0-3355-446b-96e3-e5132c37fb7a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Date" msprop:FriendlyName="Date" msprop:DbColumnName="Date" msprop:design-time-name="72d27d6f-da84-41c6-a725-3ab4db24d6c1" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="14e6a1e8-16c5-4b70-860b-751182ef3d54" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="5073717f-648d-43b3-bb6e-3730afac5a61" type="xs:int" minOccurs="0" />
+                  <xs:element name="Day" msprop:FriendlyName="Day" msprop:DbColumnName="Day" msprop:design-time-name="24cb8060-34da-489e-b7c0-b5d4f314aab1" type="xs:int" minOccurs="0" />
+                  <xs:element name="Quarter" msprop:FriendlyName="Quarter" msprop:DbColumnName="Quarter" msprop:design-time-name="b7c36d2e-fedc-4254-93d8-6cefb59aa4b1" type="xs:int" minOccurs="0" />
+                  <xs:element name="Weekday" msprop:FriendlyName="Weekday" msprop:DbColumnName="Weekday" msprop:design-time-name="b0a268df-8aec-44a2-9bac-ba8545cc9d15" type="xs:int" minOccurs="0" />
+                  <xs:element name="DateID" msprop:FriendlyName="DateID" msprop:DbColumnName="DateID" msprop:design-time-name="7a8d5582-cb4b-4cb8-a45e-03cf50403922" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_User" msprop:DbTableName="Dim_User" msprop:FriendlyName="Dim_User" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="582fc314-d2ef-4248-92e6-7064b7d2f1c8">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="User_ID" msprop:FriendlyName="User_ID" msprop:DbColumnName="User_ID" msprop:design-time-name="e8e58289-2958-4313-89a5-a8f6be5cb64e" type="xs:int" />
+                  <xs:element name="First_Name" msprop:FriendlyName="First_Name" msprop:DbColumnName="First_Name" msprop:design-time-name="d23d8b1a-5684-4987-8c4a-61ef6327f13b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Last_Name" msprop:FriendlyName="Last_Name" msprop:DbColumnName="Last_Name" msprop:design-time-name="3b75600d-8686-4db0-bd78-a56bb898b4aa" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Gender" msprop:FriendlyName="Gender" msprop:DbColumnName="Gender" msprop:design-time-name="01ec728a-f64f-45ae-84ba-b7195bb3f5b9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Age" msprop:FriendlyName="Age" msprop:DbColumnName="Age" msprop:design-time-name="38d38f4f-031a-41ae-9e8e-b9ae434e5235" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_Nutrition" msprop:DbTableName="Fact_Nutrition" msprop:FriendlyName="Fact_Nutrition" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="3b3fee9c-f7b3-4ce1-a4f2-f8bad6eaf419">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Calories" msprop:FriendlyName="Calories" msprop:DbColumnName="Calories" msprop:design-time-name="d3822801-b96c-4bc7-ae6e-846e6529191f" type="xs:int" minOccurs="0" />
+                  <xs:element name="Protein" msprop:FriendlyName="Protein" msprop:DbColumnName="Protein" msprop:design-time-name="9d48c269-2fcf-4bc2-b48c-2c76bd9974af" type="xs:double" minOccurs="0" />
+                  <xs:element name="Carbohydrates" msprop:FriendlyName="Carbohydrates" msprop:DbColumnName="Carbohydrates" msprop:design-time-name="8627d53c-a081-4429-a3d0-302f4f899030" type="xs:float" minOccurs="0" />
+                  <xs:element name="Fat" msprop:FriendlyName="Fat" msprop:DbColumnName="Fat" msprop:design-time-name="cb6bc677-ed96-4f10-bb45-602fd97443b6" type="xs:double" minOccurs="0" />
+                  <xs:element name="Fiber" msprop:FriendlyName="Fiber" msprop:DbColumnName="Fiber" msprop:design-time-name="61342fdb-4eae-4e78-88d8-2a161c0a2b7f" type="xs:double" minOccurs="0" />
+                  <xs:element name="Sugars" msprop:FriendlyName="Sugars" msprop:DbColumnName="Sugars" msprop:design-time-name="16a233f9-f583-45b7-9c5f-d0a267a9e13f" type="xs:double" minOccurs="0" />
+                  <xs:element name="Sodium" msprop:FriendlyName="Sodium" msprop:DbColumnName="Sodium" msprop:design-time-name="2339adad-c7d5-4db6-b646-40c807ccca37" type="xs:int" minOccurs="0" />
+                  <xs:element name="Cholesterol" msprop:FriendlyName="Cholesterol" msprop:DbColumnName="Cholesterol" msprop:design-time-name="07458cd8-61c2-45bf-bb53-7da55b762e90" type="xs:int" minOccurs="0" />
+                  <xs:element name="Water_Intake" msprop:FriendlyName="Water_Intake" msprop:DbColumnName="Water_Intake" msprop:design-time-name="391afd1e-311f-4ccc-9953-341083f0c889" type="xs:int" minOccurs="0" />
+                  <xs:element name="DateID" msprop:FriendlyName="DateID" msprop:DbColumnName="DateID" msprop:design-time-name="011c55ee-8ee2-40fb-a8ba-d7d21e1b0c1a" type="xs:int" minOccurs="0" />
+                  <xs:element name="FoodID" msprop:FriendlyName="FoodID" msprop:DbColumnName="FoodID" msprop:design-time-name="00f0c3b7-9b88-4294-b6d3-ad2ed73774c5" type="xs:int" minOccurs="0" />
+                  <xs:element name="MealID" msprop:FriendlyName="MealID" msprop:DbColumnName="MealID" msprop:design-time-name="e8a8c0ee-c2e7-4986-ae8e-1a3933733251" type="xs:int" minOccurs="0" />
+                  <xs:element name="User_ID" msprop:FriendlyName="User_ID" msprop:DbColumnName="User_ID" msprop:design-time-name="80f00272-2a0d-4a83-8b24-84318e4ee133" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Food" />
+          <xs:field xpath="FoodID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Meal_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Meal" />
+          <xs:field xpath="MealID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Time_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Time" />
+          <xs:field xpath="DateID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_User_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_User" />
+          <xs:field xpath="User_ID" />
+        </xs:unique>
+        <xs:keyref name="fk_Fact_Time" refer="dbo_Dim_Time_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Nutrition" />
+          <xs:field xpath="DateID" />
+        </xs:keyref>
+        <xs:keyref name="fk_Fact_User" refer="dbo_Dim_User_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Nutrition" />
+          <xs:field xpath="User_ID" />
+        </xs:keyref>
+        <xs:keyref name="fk_Fact_Food" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Nutrition" />
+          <xs:field xpath="FoodID" />
+        </xs:keyref>
+        <xs:keyref name="fk_Fact_Meal" refer="dbo_Dim_Meal_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Nutrition" />
+          <xs:field xpath="MealID" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <FOOD_x0020_OLAP_x0020_VIEW xmlns="" />
+  </Schema>
+</DataSourceView>

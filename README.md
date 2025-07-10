@@ -1,4 +1,4 @@
-# Data Warehouse & Data Mining Project - Group 3
+# Data Warehouse & Data Mining Project
 
 ## Overview
 

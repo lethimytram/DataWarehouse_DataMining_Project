@@ -9,8 +9,13 @@ This repository contains a comprehensive analytics project that integrates two k
 
 The project demonstrates the ability to extract insights from both structured warehouse data and raw datasets using analytical and predictive approaches.
 
----
+## Technologies Used
 
+- Python (`pandas`, `numpy`, `scikit-learn`, `mlxtend`, `matplotlib`)
+- Power BI (dashboard creation)
+- MDX for OLAP querying
+
+---
 ## Part 1: Data Warehouse – Nutrition Analytics
 
 ### Project Title
@@ -102,14 +107,6 @@ A summary dashboard was built using Power BI, featuring:
 - **Result**:
   - Strong rules: Car Wash → other services (confidence = 1)
   - FP-Growth and Apriori were compared for efficiency
-
----
-
-## Technologies Used
-
-- Python (`pandas`, `numpy`, `scikit-learn`, `mlxtend`, `matplotlib`)
-- Power BI (dashboard creation)
-- MDX for OLAP querying
 
 ---
 

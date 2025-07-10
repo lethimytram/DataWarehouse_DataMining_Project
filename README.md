@@ -1,12 +1,70 @@
-# Data Mining Project
+# Data Warehouse & Data Mining Project - Group 3
 
-## Project Overview
+## Overview
 
-This repository presents a data mining project that applies multiple algorithms across different datasets to solve classification, clustering, and association rule mining problems. The work covers preprocessing, model training, evaluation, and comparison among algorithms, using Python.
+This repository contains a comprehensive analytics project that integrates two key components:
 
-## Algorithms Applied
+1. **Data Warehouse** – applying ETL, OLAP, MDX, and dashboard design for nutrition data analysis.
+2. **Data Mining** – implementing machine learning and data mining techniques for classification, clustering, and association tasks.
 
-The project includes implementations of the following algorithms:
+The project demonstrates the ability to extract insights from both structured warehouse data and raw datasets using analytical and predictive approaches.
+
+---
+
+## Part 1: Data Warehouse – Nutrition Analytics
+
+### Project Title
+
+**Daily Food Nutrition Analysis to Support a Healthy Lifestyle**
+
+### Dataset Description
+
+- **Name**: `daily_food_nutrition`
+- **Size**: 10,000 food intake records from 1,000 unique users
+- **Features**: Food name, calories, sugar, fiber, protein, user ID, meal time
+- **Goal**: Analyze dietary behavior and provide recommendations for healthier lifestyles
+
+### ETL Process
+
+- **Data Preparation**:
+  - Cleaned and transformed raw data
+  - Handled missing values and standardization
+- **Data Modeling**:
+  - Designed and implemented a **Star Schema**
+  - Built fact and dimension tables for food, user, and nutrient data
+
+### OLAP Operations
+
+- **Drill Down / Roll Up**: Navigate between high-level summaries and specific meal types or nutrient details
+- **Slice / Dice**: Analyze dietary patterns by age group, food category, or individual users
+
+### MDX Queries
+
+Executed multidimensional MDX queries to extract:
+- Average calorie intake per user
+- Top sources of sugar across age groups
+- Nutrient breakdown by meal type (e.g., breakfast vs. lunch)
+
+### Dashboard (Power BI)
+
+A summary dashboard was built using Power BI, featuring:
+- Total daily nutrient intake by user
+- High-sugar food items by frequency
+- Visual recommendations for increasing fiber and reducing sugar
+
+#### Key Insights:
+- Users aged 20–21 had the highest average calorie intake (~1169 kcal/day)
+- Top sugar sources included: milk tea, coffee, fruit juices
+- Suggested improvements:
+  - Reduce sugar (beverages)
+  - Increase fiber and protein in main meals
+  - Move toward the 2000 kcal/day target
+
+---
+
+## Part 2: Data Mining
+
+### Algorithms Implemented
 
 - ID3 (Decision Tree)
 - Random Forest
@@ -16,47 +74,45 @@ The project includes implementations of the following algorithms:
 - Apriori
 - FP-Growth
 
-## Datasets and Tasks
+### Tasks and Datasets
 
-### 1. Diabetes Prediction (ID3 and Random Forest)
-- **Dataset**: 199 records, 8 features (e.g., gender, age, blood pressure, heart disease, smoking, BMI, glucose level)
-- **Target**: `Ket_qua` (diabetes result)
-- **Result**:
-  - ID3 Accuracy: 72.88% (sensitivity: 55%, specificity: 82.05%)
-  - Random Forest Accuracy: 77.97% (sensitivity: 75%, specificity: 79.49%)
-- **Insight**: Random Forest outperforms ID3 due to reduced overfitting.
+#### 1. Diabetes Prediction
+- **Dataset**: 199 records, 8 features (e.g., age, blood pressure, BMI)
+- **Target**: `Ket_qua` (diabetes outcome)
+- **Results**:
+  - ID3 Accuracy: 72.88%
+  - Random Forest Accuracy: 77.97%
+- **Conclusion**: Random Forest outperforms ID3 by mitigating overfitting
 
-### 2. Online Exam Fraud Detection (KNN)
-- **Dataset**: 200 samples, 8 features reflecting interaction behavior
-- **Target**: `Fraud` label
+#### 2. Online Exam Fraud Detection
+- **Dataset**: 200 samples representing online exam behavior
+- **Target**: `Fraud`
 - **Method**: KNN with K=5
-- **Split**: 70% training, 30% testing
 
-### 3. Lifestyle and Health Clustering (K-Means and Hierarchical)
-- **Dataset**: 1000 records, 5 features about personal health and lifestyle
-- **K-Means**:
-  - Elbow method used to choose K
-  - Scatter plot and silhouette scores used for visualization
-- **Hierarchical Clustering**:
-  - Distance: Euclidean
-  - Linkage: Average
-  - Result: Hierarchical clustering better reflects natural subgroup structure in data
+#### 3. Health Clustering
+- **Dataset**: 1,000 records on lifestyle behavior
+- **Clustering**:
+  - K-Means (Elbow method for K selection)
+  - Hierarchical (Average linkage, Euclidean distance)
+- **Conclusion**: Hierarchical clustering suited the naturally stratified health data
 
-### 4. Association Rule Mining (Apriori and FP-Growth)
-- **Dataset**: 5,000 transaction records from a car care service shop (May 2024 - May 2025)
-- **Goal**: Discover frequent itemsets and generate association rules
-- **Key Findings**:
-  - Car Wash appears in most rules (confidence = 1)
-  - Strong association between "Engine Cleaning" and "Interior Vacuuming"
-  - Sparse transaction data, suitable for Apriori
-- **Comparison**: FP-Growth and Apriori tested on sparse, unbalanced item frequency
+#### 4. Car Service Association Rules
+- **Dataset**: 5,000 transactions from a car service shop
+- **Goal**: Find frequent itemsets and derive association rules
+- **Result**:
+  - Strong rules: Car Wash → other services (confidence = 1)
+  - FP-Growth and Apriori were compared for efficiency
+
+---
 
 ## Technologies Used
 
-- Python
-- Libraries: `pandas`, `numpy`, `sklearn`, `mlxtend`, `scipy`, `matplotlib`
+- Python (`pandas`, `numpy`, `scikit-learn`, `mlxtend`, `matplotlib`)
+- Power BI (dashboard creation)
+- MDX for OLAP querying
+
+---
 
 ## Summary
 
-This project demonstrates a comprehensive application of classical data mining techniques on diverse problems. Each algorithm was evaluated using appropriate metrics, and their suitability was discussed based on the data characteristics.
-
+This project showcases an end-to-end data analytics pipeline, from data warehousing to mining. It applies structured multidimensional analysis and predictive modeling to extract meaningful insights for real-world decision-making in both health and behavioral domains.
